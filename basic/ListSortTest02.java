@@ -2,9 +2,9 @@ package kr.or.ddit.basic;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 
-//회원번호의 내림차순으로 정렬될 수 있는 외부 정렬 기준을 작성하시오.
 
 public class ListSortTest02 {
 
@@ -24,6 +24,13 @@ public class ListSortTest02 {
 		}
 		
 		Collections.sort(memList);
+		
+		System.out.println("정렬후...");
+		for(Member mem : memList) {
+			System.out.println(mem);
+		}
+		
+		Collections.sort(memList, new SortNumDesc());
 		
 		System.out.println("정렬후...");
 		for(Member mem : memList) {
@@ -83,6 +90,29 @@ class Member implements Comparable<Member>{
 	public int compareTo(Member mem) {
 		return name.compareTo(mem.getName());
 	}
+    
+	
 
+}
+//Member의 회원번호(num값)의 내림차순으로 정렬하는 외부 정렬 기준 클래스 
+class SortNumDesc implements Comparator<Member>{
 
+	@Override
+	public int compare(Member mem1, Member mem2) {
+		//방법 1 
+//		if(mem1.getNum() > mem2.getNum()) {
+//			return -1;
+//		}else if(mem1.getNum() < mem2.getNum()) {
+//			return 1;
+//		}else {
+//				return 0;
+//		}
+		
+		//wrapper클래스 이용하는 방법1
+		//return new Integer(mem1.getNum()).compareTo(mem2.getNum()) * -1;
+		
+		//wrapper클래스를 이용하는 방법2
+		return Integer.compare(mem1.getNum(),mem2.getNum()) * -1;
+		
+	}
 }

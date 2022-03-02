@@ -61,7 +61,7 @@ class Desc implements Comparator<String>{
 	//                      같으면 0
 	//                      앞의 값이 작으면 음수가 반환되도록 구현하면 된다. 
 	@Override
-	public int compare(String str1, String str2) {
+	public int compare(String str1, String str2) { //앞의 값이 크면 순서를 바꿔야 하니깐 양수 
 		//내림차순으로 정렬하는 기준 만들기 
 		
 		//방법1
