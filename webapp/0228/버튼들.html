@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css" type="text/css">
+<script>
+	function proc(){
+		//입력한 id와 name을 가져온다.
+		var idvalue = document.getElementById('id').value;
+		var namevalue = document.getElementById('name').value;
+		//적당한 처리를 한다.
+		alert("이름 : " + namevalue + "\n" + 
+				"아이디 : " + idvalue);
+		//때에 따라서 전송을 할 수도 있다. 
+		
+		
+	}
+</script>
+</head>
+<body>
+	<form action="버튼.jsp" method="post">
+	<label>이름</label>
+	<input type="text" name="name" id="name"><br>
+	
+	<label>아이디</label>
+	<input type="text" name="id" id="id"><br>
+	<br>
+	<input type="submit" value="전송">
+	<button>전송</button>
+	<input type="image" src="../images/check.png" alt="전송">
+	<br><br>
+	<input type="button" value="확인" onclick="proc()">
+	<button type="button" onclick="proc()">확인</button>
+	
+	</form>
+</body>
+</html>

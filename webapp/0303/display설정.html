@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div {
+	border: 1px solid red;
+	background: yellow;
+	width: 300px;
+	height: 250px;
+	display: none;
+}
+input[value=감추기]{
+	display : none;
+	
+}
+</style>
+<script>
+	var vd;
+	//보이기버튼 클릭하면 
+	function proc() {
+		// div에 접근 검색 - getElementById('')
+		vd = document.getElementById('dd');
+		
+		// div를 나타나게 한다. 
+		vd.style.display = "block";
+		// 감추기 버튼도 나타나게 한다.
+		vh = document.getElementById('hide');
+		vh.style.display = "inline";
+	}
+
+	function aaa() {
+		vd.style.display = "none";
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="보이기" onclick="proc()">
+	<input id="hide" type="button" value="감추기" onclick="aaa()">
+	<br>
+	<br>
+	<div id="dd"></div>
+</body>
+</html>
